@@ -1,7 +1,7 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { addEvents } from '../store/eventSlice';
-import { EventEntry, EventRequest } from '../types/events';
+import { EventRequest } from '../types/events';
 
 export const getEvents = async (dispatch: Dispatch) => {
   const response = await axios.get('http://localhost:5000/getEvents');

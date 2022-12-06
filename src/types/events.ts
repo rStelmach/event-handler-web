@@ -9,7 +9,9 @@ export interface Event extends Omit<EventEntry, 'date'> {
   date: string;
 }
 export interface StateEvent {
-  value: EventEntry;
+  event: {
+    value: Event[];
+  };
 }
 export interface EventRequest extends Omit<EventEntry, 'date'> {
   date: string;

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { EventEntry, EventRequest } from '../types/events';
 import { addEvent, getEvents } from './utils';
 import './EventModal.scss';
@@ -36,7 +36,7 @@ export const EventModal = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="modal">
+      <form onSubmit={handleSubmit(onSubmit)} className="modal" title="modalForm">
         <div className="input">
           <input type="text" placeholder="First Name" className="textInput" {...register('firstName')} />
           {errors.firstName && <p className="error-message">{errors.firstName?.message}</p>}
